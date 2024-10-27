@@ -11,9 +11,10 @@ test.describe.parallel("Checkboxes tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    await page.pause();
+    
     await page.locator("input[type='checkbox']").first().check();
-    await page.locator("input[type='checkbox']")(2).uncheck();
+    await page.locator("input[type='checkbox']").last().uncheck();
+    await page.pause();
 
     
   });
