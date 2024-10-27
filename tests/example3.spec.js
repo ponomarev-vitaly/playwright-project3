@@ -12,7 +12,7 @@ test.describe.parallel("Dropdown tests", () => {
   test("Test 1", async ({ page, browserName }) => {
     //
 
-    await page;
+    await page.locator("#dropdown").selectOption({"label": 'Option 1'});
     await page.pause();
     
   });
