@@ -1,31 +1,21 @@
 const { test, expect, firefox } = require("@playwright/test");
 
-test.describe.parallel("Smoke tests - Herokuapp", () => {
+test.describe.parallel("Checkboxes tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/checkboxes");
   });
 
   test.afterEach(async ({ page }) => {
     console.log("This test is finished!");
   });
 
+  test("Test 1", async ({ page, browserName }) => {
+    //
+    await page.pause();
+    
+  });
+
   
 
-  test("Second test @regression @herokuapp", async ({ page, browserName }) => {
-    //
-    await page.pause();
-    
-  });
-
-  test("Duplicate test @smoke @herokuapp", async ({ page }) => {
-    //
-    await page.pause();
-    
-  });
-
-  test("Duplicate test @regression @herokuapp", async ({ page }) => {
-    //
-    await page.pause();
-    
-  });
+  
 });
