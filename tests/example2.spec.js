@@ -12,8 +12,7 @@ test.describe.parallel("Checkboxes tests", () => {
   test("Test 1", async ({ page, browserName }) => {
     //
 
-    await page.locator("").first().check();
-    await page.locator("").last().uncheck();
+    await page.dragAndDrop("#column-a", "#column-b");
     await page.pause();
   });
 });
