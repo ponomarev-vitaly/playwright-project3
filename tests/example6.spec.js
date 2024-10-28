@@ -11,7 +11,6 @@ test.describe.parallel("Upload files tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-           
-    
+    await page.setInputFiles();
   });
 });
