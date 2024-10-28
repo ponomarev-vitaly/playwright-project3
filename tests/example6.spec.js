@@ -11,8 +11,9 @@ test.describe.parallel("Upload files tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    await page.setInputFiles('#file-upload', '/uploadedFiles/sample.pdf');
-    await page.locator("//input[@id='file-submit']").click();
+    await page.setInputFiles('#file-upload', 'uploadedFiles/sample.pdf');
+    await page.locator('input:has-text("Upload")').click();
+    
 
   });
 });
