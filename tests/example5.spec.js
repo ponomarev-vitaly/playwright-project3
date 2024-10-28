@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 
 test.describe("Download files tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/download");
   });
 
   test.afterEach(async ({ page }) => {
