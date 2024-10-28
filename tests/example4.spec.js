@@ -11,9 +11,9 @@ test.describe.parallel("iFrames tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    const frameTest = page.frameLocator('#mce_0_ifr').locator('html');
+    const frameTest = page.frameLocator('#mce_0_ifr').locator('body');
     await frameTest.click();
-    await frameTest.type("This is just a test typing if everuthing is working OK!");
+    await frameTest.type("body", "This is just a test typing if everuthing is working OK!");
 
         
     
