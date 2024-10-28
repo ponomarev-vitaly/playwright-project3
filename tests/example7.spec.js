@@ -11,6 +11,11 @@ test.describe.parallel("Upload files tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
+    const [fileChooser] = await Promise.all([
+        page.waitForEvent(),
+        
+    ]);
+
     await page.setInputFiles('#file-upload', 'uploadedFiles/sample.pdf');
     await page.locator('input:has-text("Upload")').click();
 
