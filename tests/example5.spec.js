@@ -10,8 +10,6 @@ test.describe("Download files tests", () => {
   });
 
   test("Test 1", async ({ page, browserName }) => {
-    //
-    // Start waiting for download before clicking. Note no await.
     const downloadPromise = page.waitForEvent("download");
     await page.getByText("text=test-file.txt").click();
     const download = await downloadPromise;
