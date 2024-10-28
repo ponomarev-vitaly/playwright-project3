@@ -13,6 +13,10 @@ test.describe.parallel("Upload files tests", () => {
     //
     await page.setInputFiles('#file-upload', 'uploadedFiles/sample.pdf');
     await page.locator('input:has-text("Upload")').click();
+
+    await page.expect();
+
+    await page.expect();
     
 
   });
