@@ -14,8 +14,7 @@ test.describe.parallel("iFrames tests", () => {
     const frameTest = page.frameLocator('#mce_0_ifr').locator('body');
     await frameTest.click();
     await frameTest.type("body", "This is just a test typing if everuthing is working OK!");
-
-        
+    await page.pause();        
     
   });
 });
