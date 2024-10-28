@@ -12,17 +12,16 @@ test.describe.parallel("Upload files tests", () => {
   test("Test 1", async ({ page, browserName }) => {
     //
     const [fileChooser] = await Promise.all([
-        page.waitForEvent(),
-        
+      page.waitForEvent("filechooser"),
+      page.locator("#file-upload").click(),
     ]);
 
-    await page.setInputFiles('#file-upload', 'uploadedFiles/sample.pdf');
+    await fileChooser.setFiles("uploadedFiles/sample.pdf");
+
     await page.locator('input:has-text("Upload")').click();
 
-    await expect(page.locator('text=File Uploaded!')).toBeVisible();
+    await expect(page.locator("text=File Uploaded!")).toBeVisible();
 
-    await expect(page.locator('text=sample.pdf')).toBeVisible();
-    
-
+    await expect(page.locator("text=sample.pdf")).toBeVisible();
   });
 });
