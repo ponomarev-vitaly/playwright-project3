@@ -3,7 +3,7 @@ const path = require("path"); // подключаем модуль path для �
 
 test.describe("Download files tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://the-internet.herokuapp.com/download"); // указываем полный URL
+    await page.goto("/download"); // указываем полный URL
   });
 
   test.afterEach(async ({ page }) => {
