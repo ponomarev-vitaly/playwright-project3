@@ -1,8 +1,9 @@
 const { test, expect } = require("@playwright/test");
+const path = require("path"); // подключаем модуль path для работы с путями
 
 test.describe("Download files tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/download");
+    await page.goto("https://the-internet.herokuapp.com/download"); // указываем полный URL
   });
 
   test.afterEach(async ({ page }) => {
@@ -11,13 +12,15 @@ test.describe("Download files tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     const downloadPromise = page.waitForEvent("download");
-    await page.getByText("text=test-file.txt").click();
+    await page.getByText("test-file.txt").click(); // убираем 'text='
     const download = await downloadPromise;
 
-    // Wait for the download process to complete and save the downloaded file somewhere.
-    await download.saveAs("/path/to/save/at/" + download.suggestedFilename());
+    // Сохраняем файл в указанное место
+    const savePath = path.join("/path/to/save/at", download.suggestedFilename());
+    await download.saveAs(savePath);
+
     const url = download.url();
-    console.log(path);
-    console.log(url);
+    console.log("Saved file path:", savePath);
+    console.log("Download URL:", url);
   });
 });
