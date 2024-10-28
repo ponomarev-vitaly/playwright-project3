@@ -14,9 +14,9 @@ test.describe.parallel("Upload files tests", () => {
     await page.setInputFiles('#file-upload', 'uploadedFiles/sample.pdf');
     await page.locator('input:has-text("Upload")').click();
 
-    await expect(page.locator());
+    await expect(page.locator('text=File Uploaded!')).toBeVisible();
 
-    await expect(page.locator());
+    await expect(page.locator('text=sample.pdf')).toBeVisible();
     
 
   });
