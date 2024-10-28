@@ -13,6 +13,7 @@ test.describe.parallel("iFrames tests", () => {
     //
     const frameTest = page.frameLocator('#mce_0_ifr').locator('html');
     await frameTest.click();
+    await frameTest.type("This is just a test typing if everuthing is working OK!");
 
         
     
