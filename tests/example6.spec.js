@@ -11,6 +11,6 @@ test.describe.parallel("Upload files tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    await page.setInputFiles('file-upload', );
+    await page.setInputFiles('file-upload', '/uploadedFiles/sample.pdf');
   });
 });
