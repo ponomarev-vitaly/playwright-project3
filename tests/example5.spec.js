@@ -18,5 +18,9 @@ test.describe("Download files tests", () => {
 
     // Wait for the download process to complete and save the downloaded file somewhere.
     await download.saveAs("/path/to/save/at/" + download.suggestedFilename());
+    const url = download.url();
+    console.log(path);
+    console.log(url);
+
   });
 });
