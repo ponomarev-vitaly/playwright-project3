@@ -11,6 +11,7 @@ test.describe("Hovers tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
+    await page.hover();
     
   });
 });
