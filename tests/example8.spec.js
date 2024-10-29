@@ -11,7 +11,7 @@ test.describe("Hovers tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    await page.hover('alt="User Avatar"');
+    await page.hover('[alt="User Avatar"]');
     await expect(page.locator('text=name: user1')).toBeVisible;
     await page.locator('text=View profile').click();
     await page.pause();
