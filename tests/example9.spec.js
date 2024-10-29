@@ -11,6 +11,6 @@ test.describe("Key Presses tests", () => {
 
   test("Test 1", async ({ page, browserName }) => {
     //
-    
+    await page.locator('');
   });
 });
